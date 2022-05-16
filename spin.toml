@@ -1,0 +1,15 @@
+spin_version = "1"
+authors = ["lann <lann.martin@fermyon.com>"]
+description = "Code Snippets"
+name = "code-snippets"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "code-snippets"
+source = "target/wasm32-wasi/release/code_snippets.wasm"
+files = ["src/*"]
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"
